@@ -14,6 +14,7 @@ import {
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import First from './src';
+import '@ethersproject/shims';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';

@@ -11,6 +11,8 @@
     "postinstall": "node_modules/.bin/rn-nodeify --install process,crypto,buffer,events,https,http,fs,path,stream,assert,url --hack && npx patch-package"
   },
   "dependencies": {
+    "@ethersproject/providers": "^5.4.7",
+    "@ethersproject/shims": "^5.7.0",
     "@react-native-async-storage/async-storage": "^1.17.12",
     "@tradle/react-native-http": "^2.0.1",
     "assert": "^1.5.0",

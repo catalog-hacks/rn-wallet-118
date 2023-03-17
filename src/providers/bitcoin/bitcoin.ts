@@ -21,9 +21,10 @@ class BitcoinProviderAS implements BTCCompatProvider {
   // getUnspent(address: string): Promise<bitcoin.Transaction[]> {
   //   throw new Error('Method not implemented.');
   // }
-  // getBalance(address: string): Promise<number> {
-  //   throw new Error('Method not implemented.');
-  // }
+
+  getBalance(address: string): Promise<string> {
+    throw new Error('Method not implemented.');
+  }
   //TODO: handle fees later
   async receiveBTC(address: string, amount: string): Promise<string | void> {
     return this.account.sendSats(address, amount, this.asset);
