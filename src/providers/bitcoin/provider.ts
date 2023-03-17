@@ -12,7 +12,7 @@ export interface IBitcoinProvider {
 
 export interface BTCCompatProvider extends IBitcoinProvider {
   receiveBTC(address: string, amount: string): Promise<string | void>;
-  fundingTransactions(address: string, confirmations: number): Promise<string>;
+  fundingTransactions(address: string, confirmations: number): Promise<any[]>;
   getSecret(address: string): Promise<string>;
   getPublicKey(): string;
   // sign(hash: Buffer): Buffer;

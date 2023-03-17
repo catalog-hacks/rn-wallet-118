@@ -12,6 +12,8 @@ export interface UserOp {
   data: string;
 }
 
+export const mnemonic = 'run quality raw mask business syrup today still vacuum pass bone goose evolve invest eye exist second gauge adult region castle imitate utility poem'
+
 export interface TypedData {
   domain: {
     name: string;
@@ -63,7 +65,7 @@ class Wallet {
     // const wallet = etherWallet.fromMnemonic(
     //   utils.entropyToMnemonic(utils.randomBytes(32)),
     // );
-    return 'run quality raw mask business syrup today still vacuum pass bone goose evolve invest eye exist second gauge adult region castle imitate utility poem'; //  wallet.mnemonic.phrase;
+    return mnemonic; //  wallet.mnemonic.phrase;
   };
 
   public static fromMnemonic = async (mnemonic: string): Promise<Wallet> => {

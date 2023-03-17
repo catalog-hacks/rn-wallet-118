@@ -40,17 +40,27 @@ class BitcoinProviderAS implements BTCCompatProvider {
   async fundingTransactions(
     address: string,
     confirmations: number,
-  ): Promise<string> {
+  ): Promise<any[]> {
     const fundingTxsRes = await axios.get(`${this.API}/address/${address}/txs`);
-    const txs = await this.parseTxs(
+    const utxos = await this.parseTxs(
       fundingTxsRes.data,
       confirmations,
       address,
       true,
     );
-    if (txs.length === 0) throw new Error('No funding transactions found');
-    return txs[0].txid;
+    if (utxos.length === 0) throw new Error('No funding transactions found');
+    return utxos;
   }
+
+  // async executeTransaction(utxos: any[], toAddress: string, value: string) {
+  //   TODO: Ad all the utxo which
+  //   utxos.sort((a, b) => a.value < b.value ? -1 : 1);
+  //   console.log('utxos: ', utxos)
+
+
+  //   utxos.find()
+
+  // }
 
   async getSecret(address: string): Promise<string> {
     try {

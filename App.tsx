@@ -12,20 +12,21 @@ import {
   View,
 } from 'react-native';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 import First from './src';
 import '@ethersproject/shims';
+import { AppStateProvider } from "./src/contexts/useAppState"
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: Colors.darker,
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <First />
+      <AppStateProvider>
+        <First />
+      </AppStateProvider>
     </SafeAreaView>
   );
 }
