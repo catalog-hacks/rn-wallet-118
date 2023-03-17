@@ -1,0 +1,48 @@
+diff --git a/node_modules/asyncstorage-down/default-opts.js b/node_modules/asyncstorage-down/default-opts.js
+index c076d3d..d5096b6 100644
+--- a/node_modules/asyncstorage-down/default-opts.js
++++ b/node_modules/asyncstorage-down/default-opts.js
+@@ -1,5 +1,4 @@
+ module.exports = {
+   get AsyncStorage() {
+-    return require('react-native').AsyncStorage
+-  }
++    return require("@react-native-async-storage/async-storage").default  }
+ }
+diff --git a/node_modules/asyncstorage-down/mock-react-native/package.json b/node_modules/asyncstorage-down/mock-react-native/package.json
+index 4bd7ed7..a40e127 100644
+--- a/node_modules/asyncstorage-down/mock-react-native/package.json
++++ b/node_modules/asyncstorage-down/mock-react-native/package.json
+@@ -2,5 +2,31 @@
+   "name": "react-native",
+   "description": "A fake React Native package to contain the mock for AsyncStorage",
+   "version": "0.0.0",
+-  "main": "index.js"
++  "main": "index.js",
++  "react-native": {
++    "crypto": "react-native-crypto",
++    "http": "@tradle/react-native-http",
++    "https": "https-browserify",
++    "path": "path-browserify",
++    "fs": "react-native-level-fs",
++    "_stream_transform": "readable-stream/transform",
++    "_stream_readable": "readable-stream/readable",
++    "_stream_writable": "readable-stream/writable",
++    "_stream_duplex": "readable-stream/duplex",
++    "_stream_passthrough": "readable-stream/passthrough",
++    "stream": "stream-browserify"
++  },
++  "browser": {
++    "crypto": "react-native-crypto",
++    "http": "@tradle/react-native-http",
++    "https": "https-browserify",
++    "path": "path-browserify",
++    "fs": "react-native-level-fs",
++    "_stream_transform": "readable-stream/transform",
++    "_stream_readable": "readable-stream/readable",
++    "_stream_writable": "readable-stream/writable",
++    "_stream_duplex": "readable-stream/duplex",
++    "_stream_passthrough": "readable-stream/passthrough",
++    "stream": "stream-browserify"
++  }
+ }
